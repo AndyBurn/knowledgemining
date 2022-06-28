@@ -1,6 +1,6 @@
 {
   "@odata.type": "#Microsoft.Skills.Custom.WebApiSkill",
-  "uri": "https://coloranalyzerapp.azurewebsites.net/api/AnalyzeColor",
+  "uri": "https://realestatecognitiveapp.azurewebsites.net/api/AnalyzeColor",
   "httpHeaders": {},
   "httpMethod": "POST",
   "timeout": "PT30S",

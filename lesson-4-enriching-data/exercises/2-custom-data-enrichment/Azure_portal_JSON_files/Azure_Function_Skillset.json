@@ -30,7 +30,7 @@
       "name": "Color Analyzer",
       "description": "Analyzes the color of the images in the dataset",
       "context": "/document",
-      "uri": "https://coloranalyzerapp.azurewebsites.net/api/AnalyzeColor",
+      "uri": "https://realestatecognitiveapp.azurewebsites.net/api/AnalyzeColor",
       "httpMethod": "POST",
       "timeout": "PT30S",
       "batchSize": 10,
