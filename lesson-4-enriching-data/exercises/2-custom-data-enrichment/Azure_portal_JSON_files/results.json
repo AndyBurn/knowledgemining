@@ -1,0 +1,105 @@
+{
+  "@odata.context": "https://realestatecognitivesearch.search.windows.net/indexes('realestate-us-sample-index')/$metadata#docs(*)",
+  "value": [
+    {
+      "@search.score": 1,
+      "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd1bt1apt.jpg",
+      "foreground": "Grey"
+    },
+    {
+      "@search.score": 1,
+      "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd3bt3apt.jpg",
+      "foreground": "Grey"
+    },
+    {
+      "@search.score": 1,
+      "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd1bt1apt.jpg",
+      "foreground": "Grey"
+    },
+    {
+      "@search.score": 1,
+      "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd2bt2apt.jpg",
+      "foreground": "White"
+    },
+    {
+      "@search.score": 1,
+      "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd2bt2apt.jpg",
+      "foreground": "White"
+    },
+    {
+      "@search.score": 1,
+      "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd2bt2apt.jpg",
+      "foreground": "White"
+    },
+    {
+      "@search.score": 1,
+      "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd3bt1apt.jpg",
+      "foreground": "White"
+    },
+    {
+      "@search.score": 1,
+      "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd3bt1apt.jpg",
+      "foreground": "White"
+    },
+    {
+      "@search.score": 1,
+      "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd1bt1apt.jpg",
+      "foreground": "Grey"
+    },
+    {
+      "@search.score": 1,
+      "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd4bt3apt.jpg",
+      "foreground": "White"
+    },
+    {
+      "@search.score": 1,
+      "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd5bt4home.jpg",
+      "foreground": "White"
+    },
+    {
+      "@search.score": 1,
+      "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd4bt3apt.jpg",
+      "foreground": "White"
+    },
+    {
+      "@search.score": 1,
+      "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd1bt1home.jpg",
+      "foreground": "Grey"
+    },
+    {
+      "@search.score": 1,
+      "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd4bt3apt.jpg",
+      "foreground": "White"
+    },
+    {
+      "@search.score": 1,
+      "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd2bt2home.jpg",
+      "foreground": "White"
+    },
+    {
+      "@search.score": 1,
+      "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd4bt3home.jpg",
+      "foreground": "Grey"
+    },
+    {
+      "@search.score": 1,
+      "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd3bt3home.jpg",
+      "foreground": "White"
+    },
+    {
+      "@search.score": 1,
+      "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd3bt3apt.jpg",
+      "foreground": "Grey"
+    },
+    {
+      "@search.score": 1,
+      "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd4bt2apt.jpg",
+      "foreground": "Black"
+    },
+    {
+      "@search.score": 1,
+      "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd3bt3home.jpg",
+      "foreground": "White"
+    }
+  ]
+}

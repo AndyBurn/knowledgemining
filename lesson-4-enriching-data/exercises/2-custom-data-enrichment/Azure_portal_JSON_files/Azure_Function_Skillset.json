@@ -1,0 +1,60 @@
+{
+  "@odata.context": "https://realestatecognitivesearch.search.windows.net/$metadata#skillsets/$entity",
+  "@odata.etag": "\"0x8DA58FFBE6E85D3\"",
+  "name": "realestate-us-sample-skillset",
+  "description": "Skillset created from the portal. skillsetName: realestate-us-sample-skillset; contentField: listingId; enrichmentGranularity: document; knowledgeStoreStorageAccount: ;",
+  "skills": [
+    {
+      "@odata.type": "#Microsoft.Skills.Text.KeyPhraseExtractionSkill",
+      "name": "#1",
+      "description": null,
+      "context": "/document/listingId",
+      "defaultLanguageCode": "en",
+      "maxKeyPhraseCount": null,
+      "modelVersion": null,
+      "inputs": [
+        {
+          "name": "text",
+          "source": "/document/listingId"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "keyPhrases",
+          "targetName": "keyphrases"
+        }
+      ]
+    },
+    {
+      "@odata.type": "#Microsoft.Skills.Custom.WebApiSkill",
+      "name": "Color Analyzer",
+      "description": "Analyzes the color of the images in the dataset",
+      "context": "/document",
+      "uri": "https://coloranalyzerapp.azurewebsites.net/api/AnalyzeColor",
+      "httpMethod": "POST",
+      "timeout": "PT30S",
+      "batchSize": 10,
+      "degreeOfParallelism": 1,
+      "inputs": [
+        {
+          "name": "thumbnail",
+          "source": "/document/thumbnail"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "foreground",
+          "targetName": "foreground"
+        },
+        {
+          "name": "background",
+          "targetName": "background"
+        }
+      ],
+      "httpHeaders": {}
+    }
+  ],
+  "cognitiveServices": null,
+  "knowledgeStore": null,
+  "encryptionKey": null
+}
