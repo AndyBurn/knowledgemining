@@ -1,0 +1,48 @@
+{
+  "@odata.context": "https://udacitycognitivesearch.search.windows.net/$metadata#indexers/$entity",
+  "@odata.etag": "\"0x8DA576079077C5D\"",
+  "name": "realestate-us-sample-indexer",
+  "description": "",
+  "dataSourceName": "realestate-us-sample",
+  "skillsetName": "realestate-us-sample-skillset",
+  "targetIndexName": "realestate-us-sample-index",
+  "disabled": null,
+  "schedule": null,
+  "parameters": {
+    "batchSize": null,
+    "maxFailedItems": 0,
+    "maxFailedItemsPerBatch": 0,
+    "base64EncodeKeys": null,
+    "configuration": {}
+  },
+  "fieldMappings": [
+    {
+      "sourceFieldName": "listingId",
+      "targetFieldName": "listingId",
+      "mappingFunction": {
+        "name": "base64Encode",
+        "parameters": null
+      }
+    }
+  ],
+  "outputFieldMappings": [
+    {
+      "sourceFieldName": "/document/listingId/keyphrases",
+      "targetFieldName": "keyphrases"
+    },
+	{
+		"sourceFieldName": "/document/foreground",
+		"targetFieldName": "foreground"
+	},
+	{
+		"sourceFieldName": "/document/category",
+		"targetFieldName": "category"
+	},
+	{
+		"sourceFieldName": "/document/mortgage",
+		"targetFieldName": "mortgage"
+	}
+  ],
+  "cache": null,
+  "encryptionKey": null
+}
