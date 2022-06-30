@@ -111,14 +111,14 @@
     // Use the fields below to connect to your search service
     var automagic = new AzSearch.Automagic({
         index: "realestate-us-sample-index",
-        queryKey: "hoyb0STZdOskgq9qzYW6B8sPx4xp5MjYzW9Tn4k1YrAzSeC2RR3o",
+        queryKey: "epOlxJSUlgOTxx7dZkYMvlTJqp99sd6ffjGQGquaBzAzSeBxw5QS",
         service: "realestatecognitivesearch"
     });
 
     //This is for the results display
     const resultTemplate = `<div class="col-xs-12 col-sm-3 col-md-3 result_img" >
             <img class="img-responsive result_img" src={{thumbnail}} alt="image not found" />
-        </div><div class="col-xs-12 col-sm-9 col-md-9"><h4>{{type}} in {{city}}</h4><div><h5><strong>Foreground color: {{foreground}}</strong></h5></div><div class="resultDescription">{{{description}}}</div></div>`;
+        </div><div class="col-xs-12 col-sm-9 col-md-9"><h4>{{type}} in {{city}}</h4><div class="resultDescription">{{{description}}}</div><div><h5><strong>Foreground color:</strong> {{foreground}}</h5></div><div><h5><strong>Category:</strong> {{category}}</h5></div><div><h5><strong>Mortgage:</strong> {{mortgage}}</h5></div><div><h5><strong>Price:</strong> \${{price}}</h5></div></div>`;
 
     automagic.addResults("results", {
         count: true

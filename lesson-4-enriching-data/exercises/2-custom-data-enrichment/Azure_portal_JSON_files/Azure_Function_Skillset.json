@@ -5,54 +5,106 @@
   "description": "Skillset created from the portal. skillsetName: realestate-us-sample-skillset; contentField: listingId; enrichmentGranularity: document; knowledgeStoreStorageAccount: ;",
   "skills": [
     {
-      "@odata.type": "#Microsoft.Skills.Text.KeyPhraseExtractionSkill",
-      "name": "#1",
-      "description": null,
-      "context": "/document/listingId",
-      "defaultLanguageCode": "en",
-      "maxKeyPhraseCount": null,
-      "modelVersion": null,
-      "inputs": [
-        {
-          "name": "text",
-          "source": "/document/listingId"
-        }
-      ],
-      "outputs": [
-        {
-          "name": "keyPhrases",
-          "targetName": "keyphrases"
-        }
-      ]
+		"@odata.type": "#Microsoft.Skills.Text.KeyPhraseExtractionSkill",
+		"name": "#1",
+		"description": null,
+		"context": "/document/listingId",
+		"defaultLanguageCode": "en",
+		"maxKeyPhraseCount": null,
+		"modelVersion": null,
+		"inputs": [
+		{
+		  "name": "text",
+		  "source": "/document/listingId"
+		}
+		],
+		"outputs": [
+		{
+		  "name": "keyPhrases",
+		  "targetName": "keyphrases"
+		}
+		]
     },
+	{
+		"@odata.type": "#Microsoft.Skills.Util.ConditionalSkill",
+		"name": "House Category",
+		"description": "Categorize houses based on various conditions",
+		"context": "/document",
+		"inputs": [
+		{
+		  "name": "condition",
+		  "source": "=$(/document/beds) < 3 && $(/document/baths) < 2"
+		},
+		{
+		  "name": "whenTrue",
+		  "source": "='Starter Home'"
+		},
+		{
+		  "name": "whenFalse",
+		  "source": "='Family Home'"
+		}
+		],
+		"outputs": [
+		{
+		  "name": "output",
+		  "targetName": "category"
+		}
+		]
+	},
     {
-      "@odata.type": "#Microsoft.Skills.Custom.WebApiSkill",
-      "name": "Color Analyzer",
-      "description": "Analyzes the color of the images in the dataset",
-      "context": "/document",
-      "uri": "https://realestatecognitiveapp.azurewebsites.net/api/AnalyzeColor",
-      "httpMethod": "POST",
-      "timeout": "PT30S",
-      "batchSize": 10,
-      "degreeOfParallelism": 1,
-      "inputs": [
-        {
-          "name": "thumbnail",
-          "source": "/document/thumbnail"
-        }
-      ],
-      "outputs": [
-        {
-          "name": "foreground",
-          "targetName": "foreground"
-        },
-        {
-          "name": "background",
-          "targetName": "background"
-        }
-      ],
-      "httpHeaders": {}
-    }
+		"@odata.type": "#Microsoft.Skills.Custom.WebApiSkill",
+		"name": "Color Analyzer",
+		"description": "Analyzes the color of the images in the dataset",
+		"context": "/document",
+		"uri": "https://coloranalyzer.azurewebsites.net/api/AnalyzeColor",
+		"httpMethod": "POST",
+		"timeout": "PT30S",
+		"batchSize": 10,
+		"degreeOfParallelism": 1,
+		"inputs": [
+		{
+		  "name": "thumbnail",
+		  "source": "/document/thumbnail"
+		}
+		],
+		"outputs": [
+		{
+		  "name": "foreground",
+		  "targetName": "foreground"
+		},
+		{
+		  "name": "background",
+		  "targetName": "background"
+		}
+		],
+		"httpHeaders": {}
+    },
+	{
+		"@odata.type": "#Microsoft.Skills.Util.ConditionalSkill",
+		"name": "Mortgage",
+		"description": "",
+		"context": "/document",
+		"inputs": [
+		{
+		  "name": "condition",
+		  "source": "=$(/document/price) < 548250"
+		},
+		{
+		  "name": "whenTrue",
+		  "source": "='Conforming'"
+		},
+		{
+		  "name": "whenFalse",
+		  "source": "='Jumbo'"
+		}
+		],
+		"outputs": [
+		{
+		  "name": "output",
+		  "targetName": "mortgage"
+		}
+		]
+	}
   ],
   "cognitiveServices": null,
   "knowledgeStore": null,
