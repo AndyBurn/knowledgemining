@@ -146,10 +146,10 @@
         "",
         suggestionsTemplate);
 
-    automagic.addRangeFacet("bedsFacet", "beds", "number", 0, 1000000);
-    automagic.addRangeFacet("bathsFacet", "baths", "number", 0, 1000000);
-    automagic.addRangeFacet("sqftFacet", "sqft", "number", 0, 1000000);
-    automagic.addRangeFacet("daysOnMarketFacet", "daysOnMarket", "number", 0, 1000000);
+    automagic.addRangeFacet("bedsFacet", "beds", "number", 0, 20);
+    automagic.addRangeFacet("bathsFacet", "baths", "number", 0, 20);
+    automagic.addRangeFacet("sqftFacet", "sqft", "number", 0, 100000);
+    automagic.addRangeFacet("daysOnMarketFacet", "daysOnMarket", "number", 0, 365);
     automagic.addCheckboxFacet("statusFacet", "status", "string");
     automagic.addCheckboxFacet("typeFacet", "type", "string");
     automagic.addCheckboxFacet("cityFacet", "city", "string");
